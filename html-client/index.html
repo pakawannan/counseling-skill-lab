@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Counseling Skill Lab ห้องปฏิบัติการจำลองเพื่อฝึกทักษะการฟังและการให้การปรึกษา">
+  <title>Counseling Skill Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="กลับหน้าแรก">
+      <span class="brand-mark">CS</span>
+      <span><strong>Counseling Skill Lab</strong><small>Counselor in Progress · ทุกการฝึก คือการเติบโต</small></span>
+    </a>
+    <div class="top-actions">
+      <button id="themeButton" class="icon-button" type="button" aria-label="สลับโหมดสี">☾</button>
+      <button id="logoutButton" class="outline-button hidden" type="button">ออกจากระบบ</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <section id="landingView" class="view hero">
+      <div class="hero-copy">
+        <span class="eyebrow">COUNSELOR IN PROGRESS</span>
+        <h1>Counseling Skill Lab</h1>
+        <p class="lead">ห้องปฏิบัติการจำลองเพื่อฝึกฝนทักษะการฟังและการให้การปรึกษา</p>
+        <p>เรียนรู้ ฝึกแยกแยะ เลือกคำตอบ สร้างคำตอบด้วยตนเอง และฝึกกับสถานการณ์จำลอง โดยคำนึงถึงศักดิ์ศรี สิทธิ และความปลอดภัยของผู้รับบริการ</p>
+        <div class="hero-actions">
+          <button class="primary-button" data-action="show-login" type="button">เข้าสู่ห้องเรียน <span>→</span></button>
+          <a class="text-link" href="teacher.html">สำหรับอาจารย์ผู้สอน</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="../public/mascots/listening.png" alt="">
+      </div>
+    </section>
+
+    <section id="loginView" class="view centered hidden">
+      <form id="loginForm" class="panel login-card">
+        <span class="eyebrow">STUDENT ACCESS</span>
+        <h2>เข้าสู่ห้องฝึกทักษะ</h2>
+        <p>ใช้รหัสห้อง รหัสนักศึกษา และ PIN 4 หลักสำหรับบันทึกความก้าวหน้า</p>
+        <label>รหัสห้องเรียน<input id="roomCode" name="roomCode" inputmode="numeric" maxlength="20" required placeholder="เช่น 4925"></label>
+        <label>รหัสนักศึกษา<input id="studentCode" name="studentCode" maxlength="30" required autocomplete="username" placeholder="เช่น 6801234567"></label>
+        <label>PIN 4 หลัก<input id="pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required autocomplete="current-password" placeholder="••••"></label>
+        <p id="loginError" class="message error hidden" role="alert"></p>
+        <button class="primary-button full" type="submit">เริ่มเรียน <span>→</span></button>
+        <button class="text-button" data-action="home" type="button">กลับหน้าแรก</button>
+        <small class="privacy-note">PIN ใช้ป้องกันคะแนนของคุณ ไม่ควรใช้ PIN เดียวกับบัญชีสำคัญ</small>
+      </form>
+    </section>
+
+    <section id="dashboardView" class="view dashboard hidden">
+      <aside class="sidebar">
+        <button class="nav-item active" data-panel="overview" type="button">⌂ <span>หน้าหลัก</span></button>
+        <button class="nav-item" data-panel="lessons" type="button">▤ <span>คลังบทเรียน</span></button>
+        <button class="nav-item" data-panel="scores" type="button">◔ <span>คะแนนของฉัน</span></button>
+        <div class="sidebar-separator"></div>
+        <p class="sidebar-label">บทเรียน</p>
+        <div id="lessonNav"></div>
+      </aside>
+      <div class="content">
+        <section id="overviewPanel" class="content-panel">
+          <span class="eyebrow">STUDENT DASHBOARD</span>
+          <h2>สวัสดี พร้อมฝึกต่อหรือยัง?</h2>
+          <p id="studentIdentity" class="muted"></p>
+          <article class="progress-card">
+            <div><strong id="progressPercent">0%</strong><span>ความคืบหน้ารวม</span></div>
+            <div class="progress-copy"><div class="progress-track"><span id="progressBar"></span></div><p id="progressText">กำลังอ่านข้อมูล...</p></div>
+          </article>
+          <h3>บทเรียนและแบบฝึกที่พร้อมทำ</h3>
+          <div id="lessonCards" class="card-grid"></div>
+          <div id="quizCards" class="card-grid"></div>
+        </section>
+
+        <section id="lessonsPanel" class="content-panel hidden">
+          <span class="eyebrow">LESSON HUB</span>
+          <h2>คลังบทเรียน</h2>
+          <p>เลือกฝึกแต่ละบทเรียนได้อย่างอิสระ และใช้ผลการฝึกเพื่อมองเห็นจุดที่ควรพัฒนาต่อ</p>
+          <div id="allLessons" class="card-grid"></div>
+        </section>
+
+        <section id="scoresPanel" class="content-panel hidden">
+          <span class="eyebrow">MY GRADEBOOK</span>
+          <h2>คะแนนของฉัน</h2>
+          <div id="scoresContent" class="panel">กำลังอ่านคะแนน...</div>
+        </section>
+
+        <section id="lessonPanel" class="content-panel hidden">
+          <button class="text-button back-button" data-panel="lessons" type="button">← กลับคลังบทเรียน</button>
+          <div id="lessonContent"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>ใช้เพื่อการเรียนรู้และการนิเทศเท่านั้น · ไม่ใช่เครื่องมือวินิจฉัยหรือประเมินสุขภาพจิต</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
