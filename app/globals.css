@@ -386,6 +386,17 @@ body {
 .csl-case-pane>.csl-answer>button:hover{background:#bd6049}
 @media(max-width:620px){.csl-evaluation-question{margin-top:14px;padding:14px;font-size:18px!important}}
 
+/* Clear reflection checklist below the side-by-side comparison. */
+.csl-side-compare .csl-review-checklist{margin-top:18px;padding-top:18px;border-top:1px solid #d9dfdb}
+.csl-side-compare .csl-review-checklist h4{margin:0 0 14px;color:#2d3748;font-family:"Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif;font-size:18px;font-weight:900;line-height:1.5}
+.csl-side-compare .csl-review-checklist ul{display:grid!important;grid-template-columns:1fr!important;gap:0!important;margin:0!important;padding:0!important;list-style:none!important}
+.csl-side-compare .csl-review-checklist li{position:relative;margin:0!important;padding:12px 12px 12px 38px!important;border-radius:10px;color:#42534e;font-size:16px!important;line-height:1.7}
+.csl-side-compare .csl-review-checklist li+li{margin-top:6px!important}
+.csl-side-compare .csl-review-checklist li:nth-child(odd){background:#f2f6f3}
+.csl-side-compare .csl-review-checklist li::before{content:"✓";position:absolute;left:12px;top:12px;display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#7a9a95;color:#fff;font-size:12px;font-weight:900;line-height:1}
+.csl-app.dark .csl-side-compare .csl-review-checklist{border-color:#42534e}.csl-app.dark .csl-side-compare .csl-review-checklist h4{color:#e7eee9}.csl-app.dark .csl-side-compare .csl-review-checklist li{color:#d5e0dc}.csl-app.dark .csl-side-compare .csl-review-checklist li:nth-child(odd){background:#26342e}
+@media(max-width:620px){.csl-side-compare .csl-review-checklist h4{font-size:17px}.csl-side-compare .csl-review-checklist li{padding:11px 10px 11px 35px!important;font-size:15px!important}.csl-side-compare .csl-review-checklist li::before{left:10px;top:12px}}
+
 /* Public headline and dashboard route back to the public home */
 .csl-hero-copy h1{font-size:clamp(36px,4.5vw,66px);line-height:1.08;letter-spacing:-.045em}.csl-hero-copy h1 em{display:inline-block}
 .csl-student-dashboard>header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.csl-student-dashboard>header>div{min-width:0}.csl-dashboard-home{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;min-height:46px;margin-top:4px;border-color:#b9c8c3!important;background:#fffefa!important;color:#385e55!important;font-weight:800!important}.csl-dashboard-home:hover{border-color:#7a9a95!important;background:#edf4f1!important}.csl-dashboard-home svg{width:18px;height:18px}
