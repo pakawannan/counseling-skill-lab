@@ -377,6 +377,12 @@ body {
 .csl-emotion-grid button,.csl-skill-buttons span,.csl-sim-reminder b{font-size:14px}.csl-emotion-description,.csl-sim-reminder p{font-size:13px;line-height:1.7}
 @media(max-width:620px){.csl-app,.csl-teacher-shell{font-size:15px}.csl-app p,.csl-app li,.csl-app blockquote,.csl-teacher-shell p,.csl-teacher-shell li,.csl-teacher-shell blockquote{font-size:14px}.csl-learn p,.csl-learn li,.csl-rogers p,.csl-ethics-card li,.csl-sensitive-note p{font-size:15px}.csl-sidebar nav button{font-size:14px}.csl-group h3{font-size:18px}.csl-learn section h2,.csl-learn article h2{font-size:21px}.csl-learn section h3,.csl-learn article h3{font-size:18px}.csl-sim-profile h2{font-size:17px}}
 
+/* Keep the learner's decision question directly beside the Cl/Co situation. */
+.csl-evaluation-question{margin:18px 0 0;padding:16px 18px;border:1.5px solid #78988f;border-radius:13px;background:#edf4f1;color:#2d3748;font-family:"Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif!important;font-size:20px!important;font-weight:900;line-height:1.6}
+.csl-app.dark .csl-evaluation-question{border-color:#61766d;background:#26342e;color:#e7eee9}
+.csl-simulation-split .csl-answer [data-slot=radio-group]{margin-top:0}
+@media(max-width:620px){.csl-evaluation-question{margin-top:14px;padding:14px;font-size:18px!important}}
+
 /* Public headline and dashboard route back to the public home */
 .csl-hero-copy h1{font-size:clamp(36px,4.5vw,66px);line-height:1.08;letter-spacing:-.045em}.csl-hero-copy h1 em{display:inline-block}
 .csl-student-dashboard>header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.csl-student-dashboard>header>div{min-width:0}.csl-dashboard-home{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;min-height:46px;margin-top:4px;border-color:#b9c8c3!important;background:#fffefa!important;color:#385e55!important;font-weight:800!important}.csl-dashboard-home:hover{border-color:#7a9a95!important;background:#edf4f1!important}.csl-dashboard-home svg{width:18px;height:18px}
