@@ -380,7 +380,10 @@ body {
 /* Keep the learner's decision question directly beside the Cl/Co situation. */
 .csl-evaluation-question{margin:18px 0 0;padding:16px 18px;border:1.5px solid #78988f;border-radius:13px;background:#edf4f1;color:#2d3748;font-family:"Noto Sans Thai","Leelawadee UI",Tahoma,sans-serif!important;font-size:20px!important;font-weight:900;line-height:1.6}
 .csl-app.dark .csl-evaluation-question{border-color:#61766d;background:#26342e;color:#e7eee9}
-.csl-simulation-split .csl-answer [data-slot=radio-group]{margin-top:0}
+.csl-case-pane>.csl-answer{margin-top:12px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.csl-case-pane>.csl-answer [data-slot=radio-group]{margin-top:0}
+.csl-case-pane>.csl-answer>button{background:#e07a5f;color:#fff}
+.csl-case-pane>.csl-answer>button:hover{background:#bd6049}
 @media(max-width:620px){.csl-evaluation-question{margin-top:14px;padding:14px;font-size:18px!important}}
 
 /* Public headline and dashboard route back to the public home */
